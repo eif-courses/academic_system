@@ -1,41 +1,40 @@
 class User:
-    def __init__(self, username, password, user_type):
+    def __init__(self, username, password, role):
         self.id = None
         self.username = username
         self.password = password
-        self.user_type = user_type
+        self.role = role
 
 
-class Administrator(User):
-    def __init__(self, username, password):
-        super().__init__(username, password, "administrator")
-
-
-class Lecturer(User):
-    def __init__(self, username, password, name):
-        super().__init__(username, password, "lecturer")
-        self.name = name
-
-
-class Student(User):
-    def __init__(self, username, password, name):
-        super().__init__(username, password, "student")
-        self.name = name
-
-
-class Group:
-    def __init__(self, name):
+class StudentGroup:
+    def __init__(self, group_name):
         self.id = None
-        self.name = name
+        self.group_name = group_name
 
 
 class Course:
-    def __init__(self, name):
+    def __init__(self, course_name):
         self.id = None
-        self.name = name
+        self.course_name = course_name
 
 
 class Subject:
-    def __init__(self, name):
+    def __init__(self, subject_name):
         self.id = None
-        self.name = name
+        self.subject_name = subject_name
+
+
+class Lecturer:
+    def __init__(self, lecturer_name, username, password):
+        self.id = None
+        self.lecturer_name = lecturer_name
+        self.username = username
+        self.password = password
+
+
+class Student:
+    def __init__(self, student_name, username, password):
+        self.id = None
+        self.student_name = student_name
+        self.username = username
+        self.password = password
